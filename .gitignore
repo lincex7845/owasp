@@ -1,2 +1,5 @@
 *.class
 *.log
+target/
+play-scala-seed/project/
+play-scala-seed/target/
