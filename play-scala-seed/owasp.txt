@@ -1,0 +1,24 @@
+1. configuracion
+1.1 charset
+1.2 encryptar (SSL -> let's encrypt)
+1.3 sbt dependency check
+1.4 evitar XSS
+1.5 evitar robo cookies
+1.6 ofuscar codigo scala
+1.7 minificar y ofuscar codigo javascript
+
+2. Formulario registro
+2.1 validar contraseña
+2.2 cifrar contraseña
+2.3 sanitizar HTML
+2.4 evitar sql injection
+2.5 evitar numeracion usuarios
+
+3. Formulario login
+3.1 sanitizar HTML
+3.2 evitar sql injection
+2.5 evitar numeracion usuarios
+
+create database owaspdb;
+create user 'owasp'@'localhost' identified by "S4N_0w4sp$";
+GRANT SELECT, INSERT, UPDATE ON owaspdb.* TO 'owasp'@'localhost';
