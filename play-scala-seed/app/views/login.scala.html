@@ -1,26 +1,24 @@
-@(title: String = "login", loginForm: LoginForm)(content: Html)
+@()
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>@title</title>
+        <title>Login</title>
     </head>
     <body>
-        @content
-        <form action="@{Session.login}" method="post">
-            <input type="text" name="username" placeholder="usuario"/>
-            <input type="password" name="password" placeholder="***">
-            <button type="submit">Entrar</button>
+        <form role="form"
+        action="@{controllers.Application.login}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" data-ng-model="username"
+                data-ng-change="feedback = ''" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" data-ng-model="password"
+                type="password" data-ng-change="feedback = ''">
+            </div>
+            <input type="submit" value="Login">
         </form>
     </body>
 </html>
-
-@(page: String, isLoggedIn: Boolean, userInfo: UserInfo, loginForm: Form[views.formdata.LoginFormData])
-
-@import bootstrap3._
-
-@Main(page, isLoggedIn, userInfo) {
-    <div class="container">
-    @loginform(routes.Application.postLogin(), loginForm("email"), loginForm("password"))
-    </div>
-}
