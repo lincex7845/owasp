@@ -8,5 +8,4 @@ import play.api.routing.sird._
 class UserRoutes @Inject()(controller: PostController) extends SimplerRouter{
 
 
-
 }
